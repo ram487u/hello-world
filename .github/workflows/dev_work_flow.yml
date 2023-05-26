@@ -76,7 +76,7 @@ jobs:
       with:
         name: artifacts
     
-    - name: Deploy to Sandbox
+    - name: Deploy to develop
       env:
         USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
