@@ -29,14 +29,17 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				
 				<configuration>
+					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
+					<!-- <businessGroupId>8da1764b-604f-4fc5-9fb3-5b53115dfecc</businessGroupId> -->  
 					<uri>https://anypoint.mulesoft.com</uri>
 					<muleVersion>${app.runtime}</muleVersion>
 					<username>${anypoint.username}</username>
 					<password>${anypoint.password}</password>
-					<applicationName>hello-world-staging</applicationName>
-					<environment>Sandbox</environment>
+					<applicationName>hello-world-develop</applicationName>
+					<environment>Development</environment>
 					<workerType>MICRO</workerType>
 					<region>us-east-2</region>
 					<workers>1</workers>
@@ -46,6 +49,15 @@
 						</properties>
 					</cloudHubDeployment>
 				</configuration>
+				 <executions>
+			    <execution>
+			      <id>deploy</id>
+			      <phase>deploy</phase>
+			      <goals>
+			        <goal>deploy</goal>
+			      </goals>
+			    </execution>
+			  </executions>
 			</plugin>
 		</plugins>
 	</build>
